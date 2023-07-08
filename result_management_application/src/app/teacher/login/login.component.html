@@ -1,0 +1,56 @@
+<div class="main">
+  <h1 class="text-center fw-bold my-3">LOG IN HERE..!</h1>
+  <div
+    *ngIf="alert"
+    class="alert alert-warning alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>WARNING ..!</strong> PLZ CHECK YOUR CREDENTIALS...!
+    <button
+      (click)="closeAlert()"
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  <form [formGroup]="loginTeacher">
+    <div class="mb-3 my-3">
+      <label class="fw-bolder text-capitalize my-2">Enter Name</label>
+      <input
+        type="text"
+        class="form-control text-capitalize"
+        placeholder="enter name here"
+        formControlName="name"
+      />
+    </div>
+    <div class="mb-3 my-3">
+      <label class="fw-bolder text-capitalize my-2">enter password</label>
+      <input
+        type="password"
+        class="form-control text-capitalize"
+        placeholder="enter your password"
+        formControlName="password"
+      />
+    </div>
+
+    <div class="text-center">
+      <button
+        (click)="login_Teacher()" [disabled]="loginTeacher.invalid"
+        class="btn btn-primary fw-bolder px-4 py-2"
+      >
+        Log In
+      </button>
+      <button (click)="clearForm()" class="btn btn-primary fw-bolder px-4 py-2">
+        Clear
+      </button>
+    </div>
+    <!-- <div class="text-center"> -->
+    <a routerLink="../register"
+      ><button class="btn btn-secondary my-3 fw-bolder px-4 py-2">
+        REGISTER
+      </button></a
+    >
+    <!-- </div> -->
+  </form>
+</div>

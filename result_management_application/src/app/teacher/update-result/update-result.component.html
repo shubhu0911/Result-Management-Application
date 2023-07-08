@@ -1,0 +1,41 @@
+<div>
+  <a routerLink="../../list"
+    ><button class="btn btn-primary my-3 fw-bolder px-4 py-2">BACK</button></a
+  >
+  <div class="container">
+    <h1 class="text-center fw-bold my-3">EDIT RESULT</h1>
+    <form [formGroup]="editResult" (ngSubmit)="updateResult()">
+      <div class="mb-3">
+        <label>ROLL NO</label>
+        <input
+          type="text"
+          class="form-control my-2"
+          formControlName="rollno"
+          placeholder="ENTER ROLL_NO"
+        />
+        <label>NAME</label>
+        <input
+          type="text"
+          class="form-control my-2"
+          formControlName="name"
+          placeholder="ENTER NAME"
+        />
+        <label>EMAIL</label>
+        <input
+          type="email"
+          class="form-control my-2"
+          formControlName="email"
+          placeholder="ENTER EMAIL"
+        />
+        <label>SCORE</label>
+        <input
+          type="text"
+          class="form-control my-2"
+          formControlName="score"
+          placeholder="ENTER SCORE"
+        />
+      </div>
+      <button type="submit" [disabled]="editResult.invalid" class="btn btn-primary my-3">Submit</button>
+    </form>
+  </div>
+</div>

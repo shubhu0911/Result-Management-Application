@@ -1,0 +1,18 @@
+<div class="main">
+    <form [formGroup]="addTeacher">
+        <div class="mb-3 my-3">
+            <label class="fw-bolder text-capitalize my-2">Enter Name</label>
+            <input type="text" class="form-control text-capitalize" placeholder="enter name here" formControlName="name" />
+        </div>
+        <div class="mb-3 my-3">
+            <label class="fw-bolder text-capitalize my-2">Enter password</label>
+            <input type="password" class="form-control text-capitalize" placeholder="enter your password" formControlName="password" />
+        </div>
+
+        <div class="text-center">
+            <button (click)="saveTeacher()" [disabled]="addTeacher.invalid" class="btn btn-primary fw-bolder px-4 py-2">Sign Up</button>
+            <button (click)="clearForm()" class="btn btn-primary fw-bolder px-4 py-2">Clear</button>
+        </div>
+
+    </form>
+</div>

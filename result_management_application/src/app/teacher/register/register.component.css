@@ -1,0 +1,39 @@
+.main {
+    width: 20vw;
+    /* height: 60vh; */
+    margin: auto;
+    margin-top: 150px;
+    /* border: 2px solid black; */
+
+    padding:35px 60px;
+    border-radius: 45px;
+
+    background-color: darkgrey;
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+input {
+    width: 100%;
+    border-radius: 15px;
+}
+
+input.ng-invalid {
+    border-left: 5px solid red;
+}
+
+
+input.ng-valid {
+    border-left: 5px solid green;
+}
+
+.error {
+    color: red;
+}
+
+button {
+    margin: 10px;
+    border-radius: 25px;
+}

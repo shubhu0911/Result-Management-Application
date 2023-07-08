@@ -1,0 +1,42 @@
+<div>
+  <a routerLink="../add"
+    ><button class="btn btn-primary my-3 fw-bolder px-4 py-2">
+      ADD RECORD
+    </button></a
+  >
+  <div class="container">
+    <h1 class="my-3 fw-bold">RESULTS</h1>
+    <table class="table my-4">
+      <thead>
+        <tr>
+          <th scope="col">S.NO.</th>
+          <th scope="col">ROLL NO.</th>
+          <th scope="col">NAME</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">SCORE</th>
+          <th scope="col">ACTIONS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of collections; index as i">
+          <th scope="row">{{ i + 1 }}</th>
+          <th>{{ item.rollno }}</th>
+          <th>{{ item.name }}</th>
+          <th>{{ item.email }}</th>
+          <th>{{ item.score }}</th>
+          <th>
+            <i
+              (click)="deleteResult(item.id)"
+              class="fa fa-trash"
+              style="font-size: 25px; color: red"
+            ></i>
+            &nbsp;&nbsp;&nbsp;
+            <a routerLink="../update/{{ item.id }}"
+              ><i class="fa fa-edit" style="font-size: 25px; color: blue"></i
+            ></a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

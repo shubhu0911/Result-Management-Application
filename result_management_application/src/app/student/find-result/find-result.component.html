@@ -1,0 +1,41 @@
+<div>
+  <div class="container">
+    <h1 class="text-center fw-bold my-3">SEARCH RESULT</h1>
+    <div
+      *ngIf="alert"
+      class="alert alert-warning alert-dismissible fade show"
+      role="alert"
+    >
+      <strong>WARNING ..!</strong> NO SUCH STUDENT FOUND...!
+      <button
+        (click)="closeAlert()"
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    <form [formGroup]="findResult">
+      <div class="mb-3">
+        <label>ROLL NO</label>
+        <input
+          type="text"
+          class="form-control my-2"
+          formControlName="rollno"
+          placeholder="ENTER ROLL_NO"
+        />
+        <label>NAME</label>
+        <input
+          type="text"
+          class="form-control my-2"
+          formControlName="name"
+          placeholder="ENTER NAME"
+        />
+      </div>
+      <button (click)="searchResult()" [disabled]="findResult.invalid" class="btn btn-primary my-3">
+        Search
+      </button>
+      <button (click)="clearForm()" class="btn btn-primary my-3">Clear</button>
+    </form>
+  </div>
+</div>
